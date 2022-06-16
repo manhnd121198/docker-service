@@ -1,6 +1,16 @@
+FROM maven:3.8.6-jdk-9-slim AS build
+
+COPY src /src/java/com/manh/kafkadocker
+
+COPY pom.xml /
+
+RUN mvn -f /pom.xml clean package
+
+
+
 FROM openjdk:8
 
-EXPOSE 8080
+EXPOSE 8085
 
 RUN ["mvn", "clean install"]
 
