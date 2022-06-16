@@ -1,0 +1,4 @@
+com\manh\kafkadocker\controller\TestController.class
+com\manh\kafkadocker\configuration\KafkaConfig.class
+com\manh\kafkadocker\KafkaDockerApplication.class
+com\manh\kafkadocker\consumer\TestConsumer.class
