@@ -1,4 +1,4 @@
-FROM maven:3.8.6-jdk-8-slim AS build
+FROM maven:3.8.6-jdk-8 AS build
 
 COPY src /src/java/com/manh/kafkadocker
 
