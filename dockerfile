@@ -1,9 +1,7 @@
 FROM openjdk:8
 
-COPY ./src/main/java
+EXPOSE 8080
 
-WORKDIR /src/main/java
+ADD target/kafka-docker.jar kafka-docker.jar
 
-RUN ["javac", "KafkaDockerApplication.java"]
-
-ENTRYPOINT ["java", "KafkaDockerApplication"]
+ENTRYPOINT ["java", "-jar", "/kafka-docker.jar"]
