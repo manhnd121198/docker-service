@@ -5,4 +5,4 @@ COPY pom.xml /usr/local/service/pom.xml
 COPY src /usr/local/service/src
 WORKDIR /usr/local/service
 RUN mvn package
-CMD ["java","-jar","target/afka-docker.jar"]
+CMD ["java","-jar","target/kafka-docker.jar"]
