@@ -1,17 +1,8 @@
-FROM maven:3.8.6-jdk-8 AS build
-
-COPY src /src/java/com/manh/kafkadocker
-
-COPY pom.xml /
-
-RUN mvn -f /pom.xml clean package
-
-
-
-FROM openjdk:8
-
-EXPOSE 8085
-
-ADD target/kafka-docker.jar kafka-docker.jar
-
-ENTRYPOINT ["java", "-jar", "/kafka-docker.jar"]
+FROM openjdk:8-jdk
+RUN apt-get update
+RUN apt-get install -y maven
+COPY pom.xml /usr/local/service/pom.xml
+COPY src /usr/local/service/src
+WORKDIR /usr/local/service
+RUN mvn package
+CMD ["java","-jar","target/afka-docker.jar"]
