@@ -2,7 +2,7 @@ FROM openjdk:8
 
 EXPOSE 8080
 
-RUN ["", "mvn clean install"]
+RUN ["mvn", "clean install"]
 
 ADD target/kafka-docker.jar kafka-docker.jar
 
